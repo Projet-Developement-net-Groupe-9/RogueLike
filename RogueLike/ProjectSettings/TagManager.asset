@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - exit
+  - coin
+  - player
+  - transparent
+  - fighter
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Blocking
+  - Characters
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 1773616445
+    locked: 0
+  - name: LowerWalls
+    uniqueID: 619468401
+    locked: 0
+  - name: LowerEnvironment
+    uniqueID: 841159123
+    locked: 0
+  - name: Characters
+    uniqueID: 4089690047
+    locked: 0
+  - name: Weapons
+    uniqueID: 3613953177
+    locked: 0
+  - name: UpperEnvironment
+    uniqueID: 3561237949
+    locked: 0
+  - name: UpperWalls
+    uniqueID: 631217025
+    locked: 0

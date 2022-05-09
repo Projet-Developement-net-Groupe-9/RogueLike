@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2943b6bc3aad9fa4d9f1e24fb9a7f4ea
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spriteCoin1: {fileID: 1623647345179350462, guid: 02b29d5fb93adda46a162bbdab54b006, type: 3}
+  - spriteCoin2: {fileID: -586250976929357127, guid: 02b29d5fb93adda46a162bbdab54b006, type: 3}
+  - spriteCoin3: {fileID: 6244358684371955587, guid: 02b29d5fb93adda46a162bbdab54b006, type: 3}
+  - spriteCoin5: {fileID: -2360418572804486258, guid: 02b29d5fb93adda46a162bbdab54b006, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
