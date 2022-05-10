@@ -15,7 +15,7 @@ public class PlayerBody : MonoBehaviour
 
     private void InitComponents()
     {
-        playerMove = gameObject.GetComponentInParent<PlayerMove>();
+        playerMove = gameObject.GetComponent<PlayerMove>();
         playerCollisions = gameObject.GetComponent<PlayerCollisions>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         rigidBody = gameObject.GetComponent<Rigidbody2D>();
@@ -26,7 +26,7 @@ public class PlayerBody : MonoBehaviour
     {
         InitComponents();
         playerMove.PlayerMoveStart();
-        playerCollisions.PlayerCollisionsStart();
+        //playerCollisions.PlayerCollisionsStart();
     }
 
     public void PlayerBodyUpdate()

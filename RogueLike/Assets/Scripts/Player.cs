@@ -7,8 +7,10 @@ public class Player : Fighter
     public GameManager gm;
     public GameObject go;
 
+    public PlayerCollisions playerCollisions;
     public PlayerBody playerBody;
     public PlayerWeapon playerWeapon;
+    public Animator animator;
 
     public int health;
     public int coins;
@@ -23,8 +25,10 @@ public class Player : Fighter
 
     private void InitComponents()
     {
-        playerBody = GetComponentInChildren<PlayerBody>();
-        playerWeapon = GetComponentInChildren<PlayerWeapon>();    
+        playerCollisions = GetComponent<PlayerCollisions>();
+        playerBody = GetComponent<PlayerBody>();
+        playerWeapon = GetComponentInChildren<PlayerWeapon>();   
+        animator = GetComponent<Animator>();
     }
 
     private void InitLoadedVars()
@@ -72,6 +76,8 @@ public class Player : Fighter
     {
         InitAll();
         playerBody.PlayerBodyStart();
+        playerCollisions.PlayerCollisionsStart();
+        playerWeapon.PlayerWeaponStart();
     }
 
     private void Update()

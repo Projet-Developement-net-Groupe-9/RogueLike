@@ -6,24 +6,21 @@ public class PlayerWeapon : MonoBehaviour
 {
     public GameManager gm;
     public GameObject go;
-    
-    public Animator animator;
 
-    public int id = 0;
-    //public int reach = 1;
+    public Player player;
+
+    public string anim;
     public int damage = 1;
-
-    private float coolDown = 0.5f;
-    private float lastSwing;
-    private bool swing;
-
-    private SpriteRenderer spriteRenderer;
+    public float coolDown = 0.5f;
+    public float lastSwing;
+    public bool swing;
+    public int hitVal;
 
     private void InitVar()
     {
         go = this.gameObject;
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
+        player = GetComponentInParent<Player>();
+        anim = "WeaponHitRight";
     }
 
     private void HandleKeys()
@@ -44,19 +41,17 @@ public class PlayerWeapon : MonoBehaviour
         {
             lastSwing = Time.time;
             swing = false;
-            animator.SetBool("Swing", false);
-        }
-            
+        } 
     }
 
     private void Swing()
     {
         swing = true;
-        animator.SetBool("Swing", true);
+        player.animator.Play(anim, 0, 0.0f);
     }
     
 
-    void Start()
+    public void PlayerWeaponStart()
     {
         InitVar();
     }
@@ -67,6 +62,10 @@ public class PlayerWeapon : MonoBehaviour
         UpdateSwing();
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -82,7 +81,5 @@ public class PlayerWeapon : MonoBehaviour
             };
             collision.SendMessage("ReceiveDamage", dmg);
         }
-            
-            
     }
 }

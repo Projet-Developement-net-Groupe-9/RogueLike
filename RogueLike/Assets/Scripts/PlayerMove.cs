@@ -27,7 +27,7 @@ public class PlayerMove : MonoBehaviour
     private void InitComponents()
     {
         player = gameObject.GetComponent<Player>();
-        playerBody = gameObject.GetComponentInChildren<PlayerBody>();
+        playerBody = gameObject.GetComponent<PlayerBody>();
         playerWeapon = gameObject.GetComponentInChildren<PlayerWeapon>();
     }
 
@@ -65,10 +65,16 @@ public class PlayerMove : MonoBehaviour
             dirId = 1;
 
             if (moveDir.x < 0)
+            {
                 playerBody.spriteRenderer.flipX = true;
+                playerWeapon.anim = "WeaponHitLeft";
+            }
 
             else if (moveDir.x > 0)
+            {
                 playerBody.spriteRenderer.flipX = false;
+                playerWeapon.anim = "WeaponHitRight";
+            }
         }
     }
 
@@ -88,7 +94,6 @@ public class PlayerMove : MonoBehaviour
     {
         playerBody.animator.SetInteger("dirValue", dirId); // Animation
         playerBody.rigidBody.MovePosition(playerBody.rigidBody.position + (moveDir * Time.fixedDeltaTime * speed)); // Dépl. joueur
-        playerWeapon.transform.position = playerBody.rigidBody.position; // Dépl. arme
     }
 
     public void PlayerMoveStart()

@@ -10,9 +10,7 @@ public class PlayerCollisions : MonoBehaviour
     public GameObject go;
     public GameObject collGo;
 
-
     private Player player;
-
 
     private void InitObjects()
     {
@@ -22,7 +20,8 @@ public class PlayerCollisions : MonoBehaviour
 
     private void InitComponents()
     {
-        player = gameObject.GetComponentInParent<Player>();
+        player = gameObject.GetComponent<Player>();
+        print(player);
     }
 
     private void InitAll()
