@@ -21,7 +21,6 @@ public class PlayerCollisions : MonoBehaviour
     private void InitComponents()
     {
         player = gameObject.GetComponent<Player>();
-        print(player);
     }
 
     private void InitAll()

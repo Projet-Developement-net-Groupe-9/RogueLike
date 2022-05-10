@@ -1833,7 +1833,7 @@ GameObject:
   - component: {fileID: 345546766}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2043,9 +2043,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23bdd9152fedc4146a9bb279f4723967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoint: 10
-  maxHitPoint: 10
-  pushRecoverySpeed: 0.2
+  hitPoint: 5
+  maxHitPoint: 5
+  pushRecoverySpeed: 0.1
   gm: {fileID: 0}
   go: {fileID: 0}
   playerCollisions: {fileID: 0}
@@ -5260,7 +5260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.0051364303, y: -0.000014364719, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1301455432}
@@ -7188,37 +7188,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8799999, y: 0.16167378}
   m_EdgeRadius: 0
---- !u!1 &1042434317
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1042434318}
-  m_Layer: 0
-  m_Name: SmallEnnemy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1042434318
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1042434317}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1051891346}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1051891345
 GameObject:
   m_ObjectHideFlags: 0
@@ -7231,6 +7200,7 @@ GameObject:
   - component: {fileID: 1051891348}
   - component: {fileID: 1051891347}
   - component: {fileID: 1051891349}
+  - component: {fileID: 1051891350}
   m_Layer: 7
   m_Name: ennemi_1
   m_TagString: fighter
@@ -7246,12 +7216,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051891345}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.109, y: -0.349, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1982691297}
-  m_Father: {fileID: 1042434318}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1051891347
 BoxCollider2D:
@@ -7342,11 +7312,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3619be37e95599a47bc54fc9870fd471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoint: 10
-  maxHitPoint: 10
+  hitPoint: 4
+  maxHitPoint: 5
   pushRecoverySpeed: 0.2
-  triggerlenght: 1
-  chaselenght: 5
+  triggerlenght: 0.3
+  chaselenght: 0.4
+--- !u!50 &1051891350
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051891345}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &1058309510
 GameObject:
   m_ObjectHideFlags: 0
@@ -7606,7 +7597,7 @@ MonoBehaviour:
   gm: {fileID: 0}
   go: {fileID: 0}
   player: {fileID: 0}
-  id: 0
+  anim: 
   damage: 1
   coolDown: 0.5
   lastSwing: 0
@@ -7764,7 +7755,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.812617, y: 1}
+    m_SensorSize: {x: 3.0370371, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8915,6 +8906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1982691297}
   - component: {fileID: 1982691298}
+  - component: {fileID: 1982691299}
   m_Layer: 7
   m_Name: HitBox
   m_TagString: Untagged
@@ -8962,6 +8954,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0921642, y: 0.14313406}
   m_EdgeRadius: 0
+--- !u!114 &1982691299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982691296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe661872afc64ab4989be426d6eb7242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 0}
+  go: {fileID: 0}
+  collGo: {fileID: 0}
+  damage: 2
+  pushForce: 1
 --- !u!1 &2019849420
 GameObject:
   m_ObjectHideFlags: 0

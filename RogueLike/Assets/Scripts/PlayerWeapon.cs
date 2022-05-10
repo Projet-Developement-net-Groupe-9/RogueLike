@@ -25,7 +25,7 @@ public class PlayerWeapon : MonoBehaviour
 
     private void HandleKeys()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (!swing)
             {
@@ -41,7 +41,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             lastSwing = Time.time;
             swing = false;
-        } 
+        }
     }
 
     private void Swing()
@@ -49,7 +49,7 @@ public class PlayerWeapon : MonoBehaviour
         swing = true;
         player.animator.Play(anim, 0, 0.0f);
     }
-    
+
 
     public void PlayerWeaponStart()
     {
@@ -64,14 +64,13 @@ public class PlayerWeapon : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "fighter")
+        if (collision.tag == "fighter")
         {
-            print(collision.gameObject.name);
             Damage dmg = new Damage
             {
                 damageAmount = damage,

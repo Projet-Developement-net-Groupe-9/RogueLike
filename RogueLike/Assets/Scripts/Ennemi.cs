@@ -12,7 +12,7 @@ public class Ennemi : Mover
     private Vector3 startingPosition;
 
 
-    private BoxCollider hitbox;
+    private BoxCollider2D hitbox;
     private Collider2D[] hits = new Collider2D[10];
     private ContactFilter2D contactFilter;
 
@@ -21,12 +21,11 @@ public class Ennemi : Mover
         base.Start();
         playerTransform = GameManager.instance.player.transform;
         startingPosition = transform.position;
-        hitbox = transform.GetChild(0).GetComponent<BoxCollider>();
+        hitbox = transform.GetComponentInChildren<BoxCollider2D>();
     }
 
     private void FixedUpdate()
     {
-
 
         if (Vector3.Distance(playerTransform.position, startingPosition) < chaselenght)
         {
@@ -62,7 +61,7 @@ public class Ennemi : Mover
                 continue;
             }
 
-            if (hits[i].tag == "fighter" && hits[i].name == "player")
+            if (hits[i].tag == "fighter" && hits[i].tag == "player")
             {
                 collidingwithPlayer = true;
             }
