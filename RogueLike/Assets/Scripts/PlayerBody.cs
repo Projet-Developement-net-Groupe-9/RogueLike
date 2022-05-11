@@ -31,11 +31,11 @@ public class PlayerBody : MonoBehaviour
 
     public void PlayerBodyUpdate()
     {
-        playerMove.PlayerMoveUpdate();
+        
     }
 
     public void PlayerBodyFixedUpdate()
     {
-        playerMove.PlayerMoveFixedUpdate();
+        
     }
 }

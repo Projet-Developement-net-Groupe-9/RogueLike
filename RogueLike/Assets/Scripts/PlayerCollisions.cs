@@ -60,10 +60,9 @@ public class PlayerCollisions : MonoBehaviour
             SceneManager.LoadScene(collGo.name, LoadSceneMode.Single);
         }
 
-        if (collGo.name == "ennemi_1")
+        if (collGo.tag == "enemy")
         {
-            Ennemi ennemi = collGo.GetComponent<Ennemi>();
-            player.health--;
+            collGo.GetComponentInParent<EnemyMove>().collMult = 0;
         }
     }
 
@@ -75,6 +74,11 @@ public class PlayerCollisions : MonoBehaviour
         {
             Tilemap tilemap = collGo.GetComponent<Tilemap>();
             tilemap.color = new Color(1f, 1f, 1f, 1f);
+        }
+
+        if (collGo.tag == "enemy")
+        {
+            collGo.GetComponentInParent<EnemyMove>().collMult = 1;
         }
     }
 }

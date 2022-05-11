@@ -7,13 +7,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    // Vars
+    public float velocity;
+
     // Ressources 
     public List<Sprite> coinSprites = new List<Sprite>();
     public List<Sprite> weaponSprites = new List<Sprite>();
 
     // References
-    public Player player;
-    public FloatingTextManager floatingTextManager;
+    public Player player = null;
+    public FloatingTextManager floatingTextManager = null;
 
     // Logic
     public string scene;
@@ -76,6 +79,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        velocity = 0.7f;
+
         if (instance == null)
         {
             instance = this;
@@ -84,7 +89,7 @@ public class GameManager : MonoBehaviour
         }
         else if (instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             return;
         }
     }

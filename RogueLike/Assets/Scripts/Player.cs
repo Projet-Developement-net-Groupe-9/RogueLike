@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Fighter
+public class Player : MonoBehaviour
 {
     public GameManager gm;
     public GameObject go;
 
+    public PlayerMove playerMove;
     public PlayerCollisions playerCollisions;
-    public PlayerBody playerBody;
     public PlayerWeapon playerWeapon;
+    public SpriteRenderer spriteRenderer;
+    public Rigidbody2D rigidBody;
     public Animator animator;
 
     public int health;
@@ -20,14 +22,16 @@ public class Player : Fighter
     private void InitObjects()
     {
         gm = GameManager.instance;
-        go = this.gameObject;
+        go = gameObject;
     }
 
     private void InitComponents()
     {
+        playerMove = GetComponent<PlayerMove>();
         playerCollisions = GetComponent<PlayerCollisions>();
-        playerBody = GetComponent<PlayerBody>();
         playerWeapon = GetComponentInChildren<PlayerWeapon>();   
+        spriteRenderer = GetComponent<SpriteRenderer>();    
+        rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
@@ -75,18 +79,18 @@ public class Player : Fighter
     private void Start()
     {
         InitAll();
-        playerBody.PlayerBodyStart();
+        playerMove.PlayerMoveStart();
         playerCollisions.PlayerCollisionsStart();
         playerWeapon.PlayerWeaponStart();
     }
 
     private void Update()
     {
-        playerBody.PlayerBodyUpdate();
+        playerMove.PlayerMoveUpdate();
     }
 
     private void FixedUpdate()
     {
-        playerBody.PlayerBodyFixedUpdate();
+        playerMove.PlayerMoveFixedUpdate();
     }
 }

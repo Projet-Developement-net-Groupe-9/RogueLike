@@ -18,7 +18,8 @@ public class PlayerWeapon : MonoBehaviour
 
     private void InitVar()
     {
-        go = this.gameObject;
+        gm = GameManager.instance;
+        go = gameObject;
         player = GetComponentInParent<Player>();
         anim = "WeaponHitRight";
     }

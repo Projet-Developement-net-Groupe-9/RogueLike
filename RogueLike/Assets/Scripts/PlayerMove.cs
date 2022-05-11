@@ -8,11 +8,8 @@ public class PlayerMove : MonoBehaviour
     public GameObject go;
 
     private Player player;
-    private PlayerBody playerBody;
     private PlayerWeapon playerWeapon;
-    private Ennemi ennemi;
 
-    private float velocity;     
     private float playerSpeed;
     private float speed;
     private int dirId;
@@ -21,30 +18,18 @@ public class PlayerMove : MonoBehaviour
     private void InitObjects()
     {
         gm = GameManager.instance;
-        go = this.gameObject;
+        go = gameObject;
     }
 
     private void InitComponents()
     {
         player = gameObject.GetComponent<Player>();
-        playerBody = gameObject.GetComponent<PlayerBody>();
         playerWeapon = gameObject.GetComponentInChildren<PlayerWeapon>();
-    }
-
-    private void InitLoadedVars()
-    {
-        playerSpeed = player.speed;
-    }
-
-    private void InitDefaultVars()
-    {
-        velocity = 0.7f;
     }
 
     private void InitVars()
     {
-        InitLoadedVars();
-        InitDefaultVars();
+        playerSpeed = player.speed;
     }
 
     private void InitAll()
@@ -58,6 +43,7 @@ public class PlayerMove : MonoBehaviour
     {
         moveDir.x = Input.GetAxisRaw("Horizontal");
         moveDir.y = Input.GetAxisRaw("Vertical");
+        
         dirId = 0;
 
         if (moveDir != Vector2.zero)
@@ -66,13 +52,13 @@ public class PlayerMove : MonoBehaviour
 
             if (moveDir.x < 0)
             {
-                playerBody.spriteRenderer.flipX = true;
+                player.spriteRenderer.flipX = true;
                 playerWeapon.anim = "WeaponHitLeft";
             }
 
             else if (moveDir.x > 0)
             {
-                playerBody.spriteRenderer.flipX = false;
+                player.spriteRenderer.flipX = false;
                 playerWeapon.anim = "WeaponHitRight";
             }
         }
@@ -87,13 +73,13 @@ public class PlayerMove : MonoBehaviour
         else 
             speedMult = 0.71f;
 
-        speed = velocity * playerSpeed * speedMult;
+        speed = gm.velocity * playerSpeed * speedMult;
     }
 
     private void HandlePosition()
     {
-        playerBody.animator.SetInteger("dirValue", dirId); // Animation
-        playerBody.rigidBody.MovePosition(playerBody.rigidBody.position + (moveDir * Time.fixedDeltaTime * speed)); // Dépl. joueur
+        player.animator.SetInteger("dirValue", dirId); // Animation
+        player.rigidBody.MovePosition(player.rigidBody.position + (moveDir * Time.fixedDeltaTime * speed)); // Dépl. joueur
     }
 
     public void PlayerMoveStart()

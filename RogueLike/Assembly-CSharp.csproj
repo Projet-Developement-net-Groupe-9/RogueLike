@@ -58,17 +58,15 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\FloatingTextManager.cs" />
     <Compile Include="Assets\Scripts\PlayerCollisions.cs" />
-    <Compile Include="Assets\Scripts\Fighter.cs" />
-    <Compile Include="Assets\Scripts\Ennemi.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Mover.cs" />
     <Compile Include="Assets\Scripts\Coin.cs" />
+    <Compile Include="Assets\Scripts\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\FloatingText.cs" />
     <Compile Include="Assets\Scripts\ItemRotation.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Damage.cs" />
     <Compile Include="Assets\Scripts\PlayerBody.cs" />
-    <Compile Include="Assets\Scripts\EnnemyHitBox.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
