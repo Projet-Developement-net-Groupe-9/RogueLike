@@ -41,25 +41,28 @@ public class PlayerMove : MonoBehaviour
 
     private void HandleKeys()
     {
-        moveDir.x = Input.GetAxisRaw("Horizontal");
-        moveDir.y = Input.GetAxisRaw("Vertical");
-        
-        dirId = 0;
-
-        if (moveDir != Vector2.zero)
+        if (MainMenu.begin == true)
         {
-            dirId = 1;
+            moveDir.x = Input.GetAxisRaw("Horizontal");
+            moveDir.y = Input.GetAxisRaw("Vertical");
 
-            if (moveDir.x < 0)
-            {
-                player.spriteRenderer.flipX = true;
-                playerWeapon.anim = "WeaponHitLeft";
-            }
+            dirId = 0;
 
-            else if (moveDir.x > 0)
+            if (moveDir != Vector2.zero)
             {
-                player.spriteRenderer.flipX = false;
-                playerWeapon.anim = "WeaponHitRight";
+                dirId = 1;
+
+                if (moveDir.x < 0)
+                {
+                    player.spriteRenderer.flipX = true;
+                    playerWeapon.anim = "WeaponHitLeft";
+                }
+
+                else if (moveDir.x > 0)
+                {
+                    player.spriteRenderer.flipX = false;
+                    playerWeapon.anim = "WeaponHitRight";
+                }
             }
         }
     }

@@ -69,9 +69,8 @@ public class PlayerCollisions : MonoBehaviour
             gm.scene = collGo.name;
             gm.UpdateState();
             //gm.SaveState();
-            doorAudio.Play();
-            print("BRUIT DE PORTE");
             SceneManager.LoadScene(collGo.name, LoadSceneMode.Single);
+            doorAudio.Play();
         }
     }
 
