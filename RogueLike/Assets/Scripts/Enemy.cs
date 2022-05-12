@@ -8,8 +8,11 @@ public class Enemy : MonoBehaviour
     public GameObject go;
 
     public EnemyMove enemyMove;
+    public EnemyDetect enemyDetect;
+    public EnemyAttack enemyAttack;
 
     public int health;
+    public int damage;
     public float speed;
     public float agroRange;
 
@@ -22,11 +25,14 @@ public class Enemy : MonoBehaviour
     private void InitComponents()
     {
         enemyMove = GetComponent<EnemyMove>();
+        enemyDetect = GetComponentInChildren<EnemyDetect>();
+        enemyAttack = GetComponentInChildren<EnemyAttack>();
     }
 
     private void InitVars()
     {
         health = 1;
+        damage = 1;
         speed = 1f;
         agroRange = 0.5f;
     }
@@ -42,6 +48,8 @@ public class Enemy : MonoBehaviour
     {
         InitAll();
         enemyMove.EnemyMoveStart();
+        enemyDetect.EnemyDetectStart();
+        enemyAttack.EnemyAttackStart();
     }
 
     private void Update()

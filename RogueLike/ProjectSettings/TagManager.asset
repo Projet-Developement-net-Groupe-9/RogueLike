@@ -8,7 +8,9 @@ TagManager:
   - coin
   - player
   - transparent
-  - fighter
+  - enemy
+  - enemyTrigger
+  - enemyAttack
   layers:
   - Default
   - TransparentFX

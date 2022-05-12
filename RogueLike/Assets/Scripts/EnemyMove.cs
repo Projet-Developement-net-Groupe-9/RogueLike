@@ -25,7 +25,7 @@ public class EnemyMove : MonoBehaviour
     private void InitComponents()
     {
         enemy = GetComponent<Enemy>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
@@ -56,7 +56,6 @@ public class EnemyMove : MonoBehaviour
             speedMult = 0.71f;
 
         speed = gm.velocity * enemy.speed * speedMult * collMult;
-        print(speed);
     }
 
     private void Move()

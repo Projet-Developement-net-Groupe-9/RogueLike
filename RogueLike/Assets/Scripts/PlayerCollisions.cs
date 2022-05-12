@@ -8,14 +8,13 @@ public class PlayerCollisions : MonoBehaviour
 {
     public GameManager gm;
     public GameObject go;
-    public GameObject collGo;
 
     private Player player;
 
     private void InitObjects()
     {
         gm = GameManager.instance;
-        go = this.gameObject;
+        go = gameObject;
     }
 
     private void InitComponents()
@@ -36,7 +35,7 @@ public class PlayerCollisions : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collGo = collision.gameObject;
+        GameObject collGo = collision.gameObject;
 
         if (collGo.tag == "transparent")
         {
@@ -59,16 +58,11 @@ public class PlayerCollisions : MonoBehaviour
             //gm.SaveState();
             SceneManager.LoadScene(collGo.name, LoadSceneMode.Single);
         }
-
-        if (collGo.tag == "enemy")
-        {
-            collGo.GetComponentInParent<EnemyMove>().collMult = 0;
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collGo = collision.gameObject;
+        GameObject collGo = collision.gameObject;
 
         if (collGo.tag == "transparent")
         {
@@ -79,6 +73,16 @@ public class PlayerCollisions : MonoBehaviour
         if (collGo.tag == "enemy")
         {
             collGo.GetComponentInParent<EnemyMove>().collMult = 1;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        GameObject collGo = collision.gameObject;
+
+        if (collGo.tag == "enemy")
+        {
+            collGo.GetComponentInParent<EnemyMove>().collMult = 0;
         }
     }
 }
