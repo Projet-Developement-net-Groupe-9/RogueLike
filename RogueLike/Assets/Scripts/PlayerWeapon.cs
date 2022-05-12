@@ -27,7 +27,7 @@ public class PlayerWeapon : MonoBehaviour
 
     private void HandleKeys()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && MainMenu.begin == true)
         {
             if (!swing)
             {
