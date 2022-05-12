@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         begin = true;
-        SceneManager.LoadScene(GameManager.instance.scene);
+        SceneManager.LoadScene("Spawn");
     }
 
     public void ExitGame()

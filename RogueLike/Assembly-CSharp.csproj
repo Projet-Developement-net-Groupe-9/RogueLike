@@ -70,12 +70,13 @@
     <Compile Include="Assets\Scripts\FloatingText.cs" />
     <Compile Include="Assets\Scripts\ItemRotation.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
-    <Compile Include="Assets\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerBody.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
+    <Compile Include="Assets\Scripts\CountScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
