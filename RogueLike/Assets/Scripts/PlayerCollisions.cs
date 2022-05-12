@@ -10,6 +10,7 @@ public class PlayerCollisions : MonoBehaviour
     public GameObject go;
 
     private Player player;
+    public AudioSource coinAudio, doorAudio;
 
     private void InitObjects()
     {
@@ -46,6 +47,7 @@ public class PlayerCollisions : MonoBehaviour
         if (collGo.tag == "coin")
         {
             Coin coin = collGo.GetComponent<Coin>();
+            coinAudio.Play();
             player.coins += coin.value;
             gm.ShowFloatingText("+ " + coin.value, 24, Color.yellow, transform.position, Vector3.up * 50, 10f);
             Destroy(collGo);
@@ -56,6 +58,8 @@ public class PlayerCollisions : MonoBehaviour
             gm.scene = collGo.name;
             gm.UpdateState();
             //gm.SaveState();
+            doorAudio.Play();
+            print("BRUIT DE PORTE");
             SceneManager.LoadScene(collGo.name, LoadSceneMode.Single);
         }
     }

@@ -8,6 +8,7 @@ public class PlayerWeapon : MonoBehaviour
     public GameObject go;
 
     public Player player;
+    public AudioSource swingAudio;
 
     public string anim;
     public int damage = 1;
@@ -31,6 +32,7 @@ public class PlayerWeapon : MonoBehaviour
             if (!swing)
             {
                 lastSwing = Time.time;
+                swingAudio.Play();
                 Swing();
             }
         }
