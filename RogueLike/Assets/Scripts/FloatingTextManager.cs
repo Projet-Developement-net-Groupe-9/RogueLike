@@ -14,7 +14,7 @@ public class FloatingTextManager : MonoBehaviour
     private void InitObjects()
     {
         gm = GameManager.instance;
-        go = this.gameObject;
+        go = gameObject;
     }
 
     private void InitVars()

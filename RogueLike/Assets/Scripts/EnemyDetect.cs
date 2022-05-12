@@ -37,14 +37,11 @@ public class EnemyDetect : MonoBehaviour
 
         if (collGo.tag == "player")
         {
-            print("stay");
-
             Player player = collGo.GetComponent<Player>();
 
             if (Time.time - lastAttack > coolDown)
             {
                 lastAttack = Time.time;
-                print("attack");
                 animator.Play("EnemyAttack", 0, 0.0f);
             }
         }

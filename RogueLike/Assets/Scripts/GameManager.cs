@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public List<Sprite> coinSprites = new List<Sprite>();
     public List<Sprite> weaponSprites = new List<Sprite>();
 
+    public GameObject coinPrefab;
+    public GameObject healPrefab;
+
     // References
     public Player player = null;
     public FloatingTextManager floatingTextManager = null;
@@ -23,9 +26,8 @@ public class GameManager : MonoBehaviour
     public int health;
     public int coins;
     public float speed;
+    public int damage;
     public int maxHealth;
-
-    public string _name;
 
     /*
      * WHAT TO SAVE :
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
         instance.health = player.health;
         instance.coins = player.coins;
         instance.speed = player.speed;
+        instance.damage = player.damage;
         instance.maxHealth = player.maxHealth;
     }
 
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
         s += instance.health.ToString() + "|";
         s += instance.coins.ToString() + "|";
         s += instance.speed.ToString() + "|";
+        s += instance.damage.ToString() + "|";
         s += instance.maxHealth.ToString() + "|";
 
         print(s);
@@ -71,7 +75,8 @@ public class GameManager : MonoBehaviour
             instance.health = int.Parse(data[1]);
             instance.coins = int.Parse(data[2]);
             instance.speed = float.Parse(data[3]);
-            instance.maxHealth = int.Parse(data[4]);
+            instance.damage = int.Parse(data[4]);
+            instance.maxHealth = int.Parse(data[5]);
 
             SceneManager.LoadScene(data[0], LoadSceneMode.Single);
         }

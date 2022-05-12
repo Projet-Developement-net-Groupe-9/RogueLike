@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -17,7 +18,9 @@ public class Player : MonoBehaviour
     public int health;
     public int coins;
     public float speed;
+    public int damage;
     public int maxHealth;
+    public bool godMode;
 
     private void InitObjects()
     {
@@ -40,6 +43,7 @@ public class Player : MonoBehaviour
         health = gm.health;
         coins = gm.coins;
         speed = gm.speed;
+        damage = gm.damage;
         maxHealth = gm.maxHealth;
     }
 
@@ -48,6 +52,7 @@ public class Player : MonoBehaviour
         health = 5;
         coins = 0;
         speed = 1f;
+        damage = 1;
         maxHealth = health;
     }
 
@@ -76,6 +81,19 @@ public class Player : MonoBehaviour
         InitGmVars();
     }
 
+    private void checkHealth()
+    {
+        if (health > maxHealth)
+            health = maxHealth;
+        else if (health <= 0)
+        {
+            health = maxHealth;
+            gm.UpdateState();
+            //gm.SaveState();
+            SceneManager.LoadScene("Spawn", LoadSceneMode.Single);
+        }
+    }
+
     private void Start()
     {
         InitAll();
@@ -87,6 +105,9 @@ public class Player : MonoBehaviour
     private void Update()
     {
         playerMove.PlayerMoveUpdate();
+        checkHealth();
+        if (godMode)
+            health = 5;
     }
 
     private void FixedUpdate()

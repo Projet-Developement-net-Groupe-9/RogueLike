@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public GameManager gm;
     public GameObject go;
+    public GameObject healPrefab;
 
     public EnemyMove enemyMove;
     public EnemyDetect enemyDetect;
@@ -15,6 +16,7 @@ public class Enemy : MonoBehaviour
     public int damage;
     public float speed;
     public float agroRange;
+    public int rewardId;
 
     private void InitObjects()
     {
@@ -44,9 +46,35 @@ public class Enemy : MonoBehaviour
         InitVars();
     }
 
+    private void drawReward()
+    {
+        // 0 -> Pas de récompense
+        // 1 -> Heal
+        // 2 -> Coin
+        rewardId = (int)Random.Range(0f, 3f);
+    }
+
+    private void checkHealth()
+    {
+        if (health <= 0)
+        {
+            if (rewardId == 1)
+            {
+                Instantiate(gm.coinPrefab, transform.position, Quaternion.identity);
+            }
+            else if (rewardId == 2)
+            {
+                Instantiate(gm.healPrefab, transform.position, Quaternion.identity);
+            }
+            
+            Destroy(go);
+        }
+    }
+
     private void Start()
     {
         InitAll();
+        drawReward();
         enemyMove.EnemyMoveStart();
         enemyDetect.EnemyDetectStart();
         enemyAttack.EnemyAttackStart();
@@ -54,7 +82,8 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        enemyMove.EnemyMoveUpdate();       
+        enemyMove.EnemyMoveUpdate();
+        checkHealth();
     }
 
     private void FixedUpdate()

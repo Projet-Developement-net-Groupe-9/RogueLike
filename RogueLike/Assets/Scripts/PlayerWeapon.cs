@@ -59,29 +59,32 @@ public class PlayerWeapon : MonoBehaviour
         InitVar();
     }
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject collGo = collision.gameObject;
+
+        if (collGo.tag == "enemy")
+        {
+            Enemy enemy = collGo.GetComponent<Enemy>();
+            enemy.health -= player.damage;
+            enemy.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        GameObject collGo = collision.gameObject;
+
+        if (collGo.tag == "enemy")
+        {
+            Enemy enemy = collGo.GetComponent<Enemy>();
+            enemy.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        }
+    }
+
+    private void Update()
     {
         HandleKeys();
         UpdateSwing();
-    }
-
-    private void FixedUpdate()
-    {
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "fighter")
-        {
-            Damage dmg = new Damage
-            {
-                damageAmount = damage,
-                origin = transform.position,
-                pushForce = coolDown
-
-            };
-            collision.SendMessage("ReceiveDamage", dmg);
-        }
     }
 }

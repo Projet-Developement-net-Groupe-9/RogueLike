@@ -97,9 +97,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0041408837, y: -0.02247879}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.041436836
 --- !u!114 &5941874591630222511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2943b6bc3aad9fa4d9f1e24fb9a7f4ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteCoin1: {fileID: 1623647345179350462, guid: 02b29d5fb93adda46a162bbdab54b006, type: 3}
-  spriteCoin2: {fileID: -586250976929357127, guid: 02b29d5fb93adda46a162bbdab54b006, type: 3}
-  spriteCoin3: {fileID: 6244358684371955587, guid: 02b29d5fb93adda46a162bbdab54b006, type: 3}
-  spriteCoin5: {fileID: -2360418572804486258, guid: 02b29d5fb93adda46a162bbdab54b006, type: 3}
+  gm: {fileID: 0}
+  go: {fileID: 0}
+  value: 0

@@ -53,6 +53,17 @@ public class PlayerCollisions : MonoBehaviour
             Destroy(collGo);
         }
 
+        if (collGo.tag == "heal")
+        {
+            Heal heal = collGo.GetComponent<Heal>();
+            if (player.health < player.maxHealth)
+            {
+                player.health += heal.value;
+                gm.ShowFloatingText("+++", 26, Color.green, transform.position, Vector3.up * 50, 10f);
+                Destroy(collGo);
+            }
+        }
+
         if (collGo.tag == "exit")
         {
             gm.scene = collGo.name;

@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Spawn.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/S1R2.unity
-    guid: f71f5c3f45e94d94e9d32bd87827fcf4
+    path: Assets/Scenes/R1.unity
+    guid: 13e0648b0af75ed40a7e4e0eb42a5587
   m_configObjects: {}

@@ -38,7 +38,8 @@ public class EnemyAttack : MonoBehaviour
         if (collGo.tag == "player")
         {
             Player player = collGo.GetComponent<Player>();
-            player.health -= enemy.damage;  
+            player.health -= enemy.damage;
+            GameManager.instance.ShowFloatingText(enemy.damage.ToString(), 24, Color.red, transform.position, Vector3.zero, 0.5f);
         }
     }
     //private void OnTriggerEnter2D(Collider2D collision)
