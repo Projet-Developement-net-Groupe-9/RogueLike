@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject coinPrefab;
     public GameObject healPrefab;
+    public GameObject ennemyPrefab;
 
     // References
     public Player player = null;
@@ -84,7 +85,6 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("SaveState")) PlayerPrefs.DeleteKey("SaveState");
 
         string s = "";
-        s += instance.scene + "|";
         s += instance.health.ToString() + "|";
         s += instance.coins.ToString() + "|";
         s += instance.speed.ToString() + "|";
@@ -109,17 +109,17 @@ public class GameManager : MonoBehaviour
             instance.damage = int.Parse(data[4]);
             instance.maxHealth = int.Parse(data[5]);
 
-            SceneManager.LoadScene(data[0], LoadSceneMode.Single);
+            SceneManager.LoadScene("Spawn", LoadSceneMode.Single);
         }
-    }
-
-    public void DestroyState()
-    {
-        PlayerPrefs.DeleteAll();
     }
 
     private void Awake()
     {
+        if (SceneManager.GetActiveScene().name == "MainMenu" && SceneManager.GetActiveScene().name == "DeathMenu")
+        {
+            Destroy(gameObject);
+            return;
+        }
         roomCpt = 0;
         velocity = 0.7f;
 

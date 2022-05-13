@@ -5925,7 +5925,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.55684865, y: 0.00006440282, z: -10}
+  m_LocalPosition: {x: 0.37743235, y: 0.00008830428, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1301455432}
@@ -8483,6 +8483,7 @@ MonoBehaviour:
   - {fileID: -3917202334156835361, guid: 2b27e14aa292d1c429908a2e84ba7f59, type: 3}
   coinPrefab: {fileID: 5941874591630222497, guid: 867fd76135b329249ad20afdca167190, type: 3}
   healPrefab: {fileID: 9220692498467287076, guid: b8d178fe182310e47bee6a06a5af2513, type: 3}
+  ennemyPrefab: {fileID: 9144468118782343229, guid: 2d7ea8f3c34c32845a4450a8cc4569e0, type: 3}
   player: {fileID: 0}
   floatingTextManager: {fileID: 0}
   shop: {fileID: 99606752}
@@ -8849,7 +8850,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8466003, y: 1}
+    m_SensorSize: {x: 2.205433, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

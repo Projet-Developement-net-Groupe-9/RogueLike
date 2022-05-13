@@ -29,7 +29,7 @@ public class CountScript : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("Spawn");
         }
            
     }

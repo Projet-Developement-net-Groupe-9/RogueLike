@@ -7,18 +7,16 @@ public class MainMenu : MonoBehaviour
 {
     public static bool begin;
 
-    public GameManager gm;
-
     public void PlayGame()
     {
         begin = true;
-        SceneManager.LoadScene("Spawn");
+        SceneManager.LoadScene("Spawn", LoadSceneMode.Single);
     }
 
     public void NewGame()
     {
-        gm.DestroyState();
-        SceneManager.LoadScene("Spawn");
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Spawn", LoadSceneMode.Single);
     }
 
     public void ExitGame()
@@ -29,6 +27,6 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        gm = GameManager.instance;
+        
     }
 }
