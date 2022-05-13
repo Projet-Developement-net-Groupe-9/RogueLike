@@ -13,6 +13,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Spawn");
     }
 
+    public void NewGame()
+    {
+        gm.DestroyState();
+        SceneManager.LoadScene("Spawn");
+    }
+
     public void ExitGame()
     {
         begin = false;

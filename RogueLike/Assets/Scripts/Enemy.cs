@@ -39,6 +39,17 @@ public class Enemy : MonoBehaviour
         speed = gm.GetEnemySpeed();
         accuracy = gm.GetEnemyAccuracy();
         agroRange = 0.7f;
+
+        //int var = (int)Random.Range(1f, 2f);
+        //if (var == 1)
+        //{
+        //    damage = Mathf.RoundToInt(damage / 2);
+        //    health = Mathf.RoundToInt(health / 2);
+        //    speed = speed * 2;
+        //    // Diviser la taille de x et de y du transform de ENEMYBODY par 2
+            
+        //    // Changer son sprite si t chaud
+        //}
     }
 
     private void InitAll()

@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     // References
     public Player player = null;
     public FloatingTextManager floatingTextManager = null;
+    public GameObject shop;
 
     // Logic
     public string scene;
@@ -110,6 +111,11 @@ public class GameManager : MonoBehaviour
 
             SceneManager.LoadScene(data[0], LoadSceneMode.Single);
         }
+    }
+
+    public void DestroyState()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
     private void Awake()

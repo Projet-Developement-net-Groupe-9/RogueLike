@@ -8,6 +8,8 @@ public class PlayerCollisions : MonoBehaviour
 {
     public GameManager gm;
     public GameObject go;
+    public Canvas canvas;
+    public GameObject shop;
 
     private Player player;
     public AudioSource coinAudio, doorAudio;
@@ -16,6 +18,7 @@ public class PlayerCollisions : MonoBehaviour
     {
         gm = GameManager.instance;
         go = gameObject;
+        shop = gm.shop;
     }
 
     private void InitComponents()
@@ -71,7 +74,13 @@ public class PlayerCollisions : MonoBehaviour
             gm.SaveState();
             gm.roomCpt++;
             SceneManager.LoadScene(collGo.name, LoadSceneMode.Single);
+            GameManager.instance.roomCpt++;
             doorAudio.Play();
+        }
+
+        if (collGo.tag == "pnj")
+        {
+            shop.SetActive(true);
         }
     }
 
@@ -88,6 +97,11 @@ public class PlayerCollisions : MonoBehaviour
         if (collGo.tag == "enemy")
         {
             collGo.GetComponentInParent<EnemyMove>().collMult = 1;
+        }
+
+        if (collGo.tag == "pnj")
+        {
+            shop.SetActive(false);
         }
     }
 

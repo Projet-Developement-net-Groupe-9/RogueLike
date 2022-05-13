@@ -12,6 +12,7 @@ TagManager:
   - enemyTrigger
   - enemyAttack
   - heal
+  - pnj
   layers:
   - Default
   - TransparentFX
