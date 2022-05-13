@@ -63,14 +63,18 @@
     <Compile Include="Assets\Scripts\PlayerCollisions.cs" />
     <Compile Include="Assets\Scripts\CountScript.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\ShopMenu.cs" />
     <Compile Include="Assets\Scripts\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\ScriptTextDodge.cs" />
     <Compile Include="Assets\Scripts\EnemyDetect.cs" />
+    <Compile Include="Assets\Scripts\ScriptTextDamage.cs" />
     <Compile Include="Assets\Scripts\Coin.cs" />
     <Compile Include="Assets\Scripts\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\FloatingText.cs" />
     <Compile Include="Assets\Scripts\EnemySpawn.cs" />
     <Compile Include="Assets\Scripts\ItemRotation.cs" />
+    <Compile Include="Assets\Scripts\ScriptTextHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerBody.cs" />
@@ -78,10 +82,6 @@
     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
-    <Compile Include="Assets\Scripts\ShopMenu.cs" />
-    <Compile Include="Assets\Scripts\ScriptTextHealth.cs" />
-    <Compile Include="Assets\Scripts\ScriptTextDamage.cs" />
-    <Compile Include="Assets\Scripts\ScriptTextDodge.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

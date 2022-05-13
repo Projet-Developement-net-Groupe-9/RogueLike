@@ -7,6 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     public static bool begin;
 
+    public GameManager gm;
+
     public void PlayGame()
     {
         begin = true;
@@ -23,5 +25,10 @@ public class MainMenu : MonoBehaviour
     {
         begin = false;
         Application.Quit();
+    }
+
+    private void Start()
+    {
+        gm = GameManager.instance;
     }
 }
