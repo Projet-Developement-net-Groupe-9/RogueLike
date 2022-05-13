@@ -68,7 +68,8 @@ public class PlayerCollisions : MonoBehaviour
         {
             gm.scene = collGo.name;
             gm.UpdateState();
-            //gm.SaveState();
+            gm.SaveState();
+            gm.roomCpt++;
             SceneManager.LoadScene(collGo.name, LoadSceneMode.Single);
             doorAudio.Play();
         }

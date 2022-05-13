@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public float speed;
     public int damage;
     public int maxHealth;
+    public int dodge;
     public bool godMode;
 
     private void InitObjects()
@@ -45,6 +46,7 @@ public class Player : MonoBehaviour
         speed = gm.speed;
         damage = gm.damage;
         maxHealth = gm.maxHealth;
+        dodge = gm.dodge;
     }
 
     private void InitDefaultVars()
@@ -54,6 +56,7 @@ public class Player : MonoBehaviour
         speed = 1f;
         damage = 1;
         maxHealth = health;
+        dodge = 1;
     }
 
     private void InitVars()
@@ -89,7 +92,8 @@ public class Player : MonoBehaviour
         {
             health = maxHealth;
             gm.UpdateState();
-            //gm.SaveState();
+            gm.SaveState();
+            gm.roomCpt = 0;
             SceneManager.LoadScene("DeathMenu", LoadSceneMode.Single);
         }
     }

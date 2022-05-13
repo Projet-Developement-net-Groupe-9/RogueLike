@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public int health;
     public int damage;
     public float speed;
+    public int accuracy;
     public float agroRange;
     public int rewardId;
 
@@ -33,10 +34,11 @@ public class Enemy : MonoBehaviour
 
     private void InitVars()
     {
-        health = 1;
-        damage = 1;
-        speed = 1f;
-        agroRange = 0.5f;
+        health = gm.GetEnemyHealthDamage();
+        damage = gm.GetEnemyHealthDamage();
+        speed = gm.GetEnemySpeed();
+        accuracy = gm.GetEnemyAccuracy();
+        agroRange = 0.7f;
     }
 
     private void InitAll()

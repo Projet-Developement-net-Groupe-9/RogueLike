@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
     public float speed;
     public int damage;
     public int maxHealth;
+    public int dodge;
+
+    public int roomCpt;
 
     /*
      * WHAT TO SAVE :
@@ -40,6 +43,31 @@ public class GameManager : MonoBehaviour
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);     
     }
 
+    public int GetEnemyHealthDamage()
+    {
+        return (int)Mathf.Round(Mathf.Sqrt(roomCpt * 2));
+    }
+
+    public float GetEnemySpeed()
+    {
+        return 1 + Mathf.Abs(roomCpt / 50f - 1);
+    }
+
+    public int GetEnemyAccuracy()
+    {
+        return (int)Mathf.Pow(GetEnemyHealthDamage() * 2, 2);
+    }
+
+    public int[] GetUpgradePrices()
+    {
+        int[] result = new int[3];
+        result[0] = (int)Mathf.Pow(player.maxHealth, 2); // Vie
+        result[1] = (int)Mathf.Pow(player.damage, 2);    // Dégat
+        result[2] = (int)Mathf.Pow(player.dodge, 2);     // Esquive
+
+        return result;
+    }
+
     public void UpdateState()
     {
         instance.health = player.health;
@@ -47,6 +75,7 @@ public class GameManager : MonoBehaviour
         instance.speed = player.speed;
         instance.damage = player.damage;
         instance.maxHealth = player.maxHealth;
+        instance.dodge = player.dodge;
     }
 
     public void SaveState()
@@ -60,6 +89,7 @@ public class GameManager : MonoBehaviour
         s += instance.speed.ToString() + "|";
         s += instance.damage.ToString() + "|";
         s += instance.maxHealth.ToString() + "|";
+        s += instance.dodge.ToString() + "|";
 
         print(s);
 
@@ -84,6 +114,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        roomCpt = 0;
         velocity = 0.7f;
 
         if (instance == null)
