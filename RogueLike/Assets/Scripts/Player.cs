@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
             health = maxHealth;
             gm.UpdateState();
             //gm.SaveState();
-            SceneManager.LoadScene("Spawn", LoadSceneMode.Single);
+            SceneManager.LoadScene("DeathMenu", LoadSceneMode.Single);
         }
     }
 
