@@ -73,8 +73,8 @@ public class PlayerCollisions : MonoBehaviour
             gm.roomCpt++;
             if (gm.roomCpt > gm.bestScore)
                 gm.bestScore = gm.roomCpt;
-            SceneManager.LoadScene(collGo.name, LoadSceneMode.Single);
             doorAudio.Play();
+            SceneManager.LoadScene(collGo.name, LoadSceneMode.Single);
         }
 
         if (collGo.tag == "pnj")

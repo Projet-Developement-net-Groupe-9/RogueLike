@@ -25,9 +25,4 @@ public class MainMenu : MonoBehaviour
         begin = false;
         Application.Quit();
     }
-
-    private void Start()
-    {
-        
-    }
 }

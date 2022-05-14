@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public int dodge;
     public bool godMode;
     public int weaponSpriteId;
+    public int bestScore;
 
     private void InitObjects()
     {
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
         maxHealth = gm.maxHealth;
         dodge = gm.dodge;
         weaponSpriteId = gm.weaponSpriteId;
+        bestScore = gm.bestScore;
     }
 
     private void InitDefaultVars()

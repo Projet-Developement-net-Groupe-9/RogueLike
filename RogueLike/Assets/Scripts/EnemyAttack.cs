@@ -6,6 +6,7 @@ public class EnemyAttack : MonoBehaviour
 {
     public GameManager gm;
     public GameObject go;
+    public AudioSource hitSound;
 
     public Enemy enemy;
 
@@ -47,6 +48,8 @@ public class EnemyAttack : MonoBehaviour
             {
                 print("hit");
                 player.health -= enemy.damage;
+                hitSound = gameObject.transform.GetComponentInParent<AudioSource>();
+                hitSound.Play();
                 gm.ShowFloatingText(enemy.damage.ToString(), 24, Color.red, transform.position, Vector3.zero, 0.5f);
             }
             

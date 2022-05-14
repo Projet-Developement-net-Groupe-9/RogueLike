@@ -9,7 +9,7 @@ public class CountScript : MonoBehaviour
     float currentTime = 0f;
 
     public Text text;
-    public TextMesh RoomCpt;
+    public GameManager gm;
     
 
     private void Start()
@@ -17,12 +17,12 @@ public class CountScript : MonoBehaviour
         currentTime = 3;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         text = GetComponentInChildren<Text>();
 
         currentTime -= Time.deltaTime;
-        text.text = "Retour dans "+currentTime.ToString("0");
+        text.text = "Back in "+currentTime.ToString("0");
 
         if (currentTime <= 0)
         {
