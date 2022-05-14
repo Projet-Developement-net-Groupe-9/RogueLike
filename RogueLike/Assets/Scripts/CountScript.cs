@@ -15,13 +15,11 @@ public class CountScript : MonoBehaviour
     private void Start()
     {
         currentTime = 3;
-        RoomCpt.text = "Salles passées : " + GameManager.instance.roomCpt.ToString();
     }
 
     private void FixedUpdate()
     {
         text = GetComponentInChildren<Text>();
-        RoomCpt = GetComponentInChildren<TextMesh>();
 
         currentTime -= Time.deltaTime;
         text.text = "Retour dans "+currentTime.ToString("0");
@@ -29,7 +27,7 @@ public class CountScript : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
-            SceneManager.LoadScene("Spawn");
+            SceneManager.LoadScene("Spawn", LoadSceneMode.Single);
         }
            
     }

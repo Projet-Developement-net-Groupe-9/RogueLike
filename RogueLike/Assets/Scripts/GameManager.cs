@@ -21,10 +21,8 @@ public class GameManager : MonoBehaviour
     // References
     public Player player = null;
     public FloatingTextManager floatingTextManager = null;
-    public GameObject shop;
 
     // Logic
-    public string scene;
     public int health;
     public int coins;
     public float speed;
@@ -85,7 +83,6 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("SaveState")) PlayerPrefs.DeleteKey("SaveState");
 
         string s = "";
-        s += instance.health.ToString() + "|";
         s += instance.coins.ToString() + "|";
         s += instance.speed.ToString() + "|";
         s += instance.damage.ToString() + "|";
@@ -103,11 +100,11 @@ public class GameManager : MonoBehaviour
         {
             string[] data = PlayerPrefs.GetString("SaveState").Split('|');
 
-            instance.health = int.Parse(data[1]);
-            instance.coins = int.Parse(data[2]);
-            instance.speed = float.Parse(data[3]);
-            instance.damage = int.Parse(data[4]);
-            instance.maxHealth = int.Parse(data[5]);
+            instance.coins = int.Parse(data[0]);
+            instance.speed = float.Parse(data[1]);
+            instance.damage = int.Parse(data[2]);
+            instance.maxHealth = int.Parse(data[3]);
+            instance.dodge = int.Parse(data[4]);
 
             SceneManager.LoadScene("Spawn", LoadSceneMode.Single);
         }
@@ -120,6 +117,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         roomCpt = 0;
         velocity = 0.7f;
 

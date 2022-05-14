@@ -18,7 +18,6 @@ public class PlayerCollisions : MonoBehaviour
     {
         gm = GameManager.instance;
         go = gameObject;
-        shop = gm.shop;
     }
 
     private void InitComponents()
@@ -69,18 +68,20 @@ public class PlayerCollisions : MonoBehaviour
 
         if (collGo.tag == "exit")
         {
-            gm.scene = collGo.name;
             gm.UpdateState();
             gm.SaveState();
             gm.roomCpt++;
             SceneManager.LoadScene(collGo.name, LoadSceneMode.Single);
-            GameManager.instance.roomCpt++;
             doorAudio.Play();
         }
 
         if (collGo.tag == "pnj")
         {
+            Mage mage = collGo.GetComponent<Mage>();
+            GameObject shop = mage.shop;
             shop.SetActive(true);
+            shop.transform.Find("BackGroundExit").gameObject.SetActive(true);
+            shop.transform.Find("Container").gameObject.SetActive(true);
         }
     }
 
@@ -101,6 +102,8 @@ public class PlayerCollisions : MonoBehaviour
 
         if (collGo.tag == "pnj")
         {
+            Mage mage = collGo.GetComponent<Mage>();
+            GameObject shop = mage.shop;
             shop.SetActive(false);
         }
     }
