@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public int weaponSpriteId;
 
     public int roomCpt;
+    public int bestScore;
 
     /*
      * WHAT TO SAVE :
@@ -116,6 +117,7 @@ public class GameManager : MonoBehaviour
         s += instance.maxHealth.ToString() + "|";
         s += instance.dodge.ToString() + "|";
         s += instance.weaponSpriteId.ToString() + "|";
+        s += instance.bestScore.ToString() + "|";
 
         print(s);
 
@@ -135,6 +137,7 @@ public class GameManager : MonoBehaviour
             maxHealth = int.Parse(data[3]);
             dodge = int.Parse(data[4]);
             weaponSpriteId = int.Parse(data[5]);
+            bestScore = int.Parse(data[6]);
 
             SceneManager.LoadScene("Spawn", LoadSceneMode.Single);
         }

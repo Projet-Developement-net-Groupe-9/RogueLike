@@ -96,6 +96,7 @@ public class Player : MonoBehaviour
             health = maxHealth;
             gm.UpdateState();
             gm.SaveState();
+            print("Best score : " + gm.bestScore);
             gm.roomCpt = 0;
             SceneManager.LoadScene("DeathMenu", LoadSceneMode.Single);
         }

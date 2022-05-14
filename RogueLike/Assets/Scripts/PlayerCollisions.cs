@@ -71,6 +71,8 @@ public class PlayerCollisions : MonoBehaviour
             gm.UpdateState();
             gm.SaveState();
             gm.roomCpt++;
+            if (gm.roomCpt > gm.bestScore)
+                gm.bestScore = gm.roomCpt;
             SceneManager.LoadScene(collGo.name, LoadSceneMode.Single);
             doorAudio.Play();
         }
