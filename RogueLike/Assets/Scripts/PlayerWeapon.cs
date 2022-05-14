@@ -57,6 +57,7 @@ public class PlayerWeapon : MonoBehaviour
     public void PlayerWeaponStart()
     {
         InitVar();
+        GetComponent<SpriteRenderer>().sprite = gm.weaponSprites[player.weaponSpriteId];
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -83,6 +83,14 @@ public class PlayerCollisions : MonoBehaviour
             shop.transform.Find("BackGroundExit").gameObject.SetActive(true);
             shop.transform.Find("Container").gameObject.SetActive(true);
         }
+
+        if (collGo.tag == "weaponSprite")
+        {
+            int spriteId = int.Parse(collGo.transform.GetChild(0).name);
+            gm.weaponSpriteId = spriteId;
+            player.weaponSpriteId = spriteId;
+            player.playerWeapon.GetComponent<SpriteRenderer>().sprite = gm.weaponSprites[spriteId];
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

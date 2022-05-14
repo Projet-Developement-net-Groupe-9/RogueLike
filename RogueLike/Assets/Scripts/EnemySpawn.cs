@@ -30,7 +30,7 @@ public class EnemySpawn : MonoBehaviour
     {
         foreach (var enemySpawnPoint in enemiesSpawnPoints)
         {
-            int rand = (int)Random.Range(1f, 6f);
+            int rand = (int)Random.Range(1f, 3f);
             if (rand > 1)
             {
                 Instantiate(gm.ennemyPrefab, enemySpawnPoint.transform.position, Quaternion.identity);

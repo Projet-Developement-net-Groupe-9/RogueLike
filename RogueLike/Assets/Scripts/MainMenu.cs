@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
+        begin = true;
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("Spawn", LoadSceneMode.Single);
     }

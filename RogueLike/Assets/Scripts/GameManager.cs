@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public int damage;
     public int maxHealth;
     public int dodge;
+    public int weaponSpriteId;
 
     public int roomCpt;
 
@@ -68,6 +69,31 @@ public class GameManager : MonoBehaviour
         return result;
     }
 
+    public void UpgradeHealth()
+    {
+        player.maxHealth++;
+        player.health++;
+        UpdateState();
+    }
+
+    public void UpgradeDamage()
+    {
+        player.damage++;
+        UpdateState();
+    }
+
+    public void UpgradeDodge()
+    {
+        player.dodge++;
+        UpdateState();
+    }
+
+    public void DebitCoins(int value)
+    {
+        player.coins -= value;
+        UpdateState();
+    }
+
     public void UpdateState()
     {
         instance.health = player.health;
@@ -76,6 +102,7 @@ public class GameManager : MonoBehaviour
         instance.damage = player.damage;
         instance.maxHealth = player.maxHealth;
         instance.dodge = player.dodge;
+        instance.weaponSpriteId = player.weaponSpriteId;
     }
 
     public void SaveState()
@@ -88,6 +115,7 @@ public class GameManager : MonoBehaviour
         s += instance.damage.ToString() + "|";
         s += instance.maxHealth.ToString() + "|";
         s += instance.dodge.ToString() + "|";
+        s += instance.weaponSpriteId.ToString() + "|";
 
         print(s);
 
@@ -100,11 +128,13 @@ public class GameManager : MonoBehaviour
         {
             string[] data = PlayerPrefs.GetString("SaveState").Split('|');
 
-            instance.coins = int.Parse(data[0]);
-            instance.speed = float.Parse(data[1]);
-            instance.damage = int.Parse(data[2]);
-            instance.maxHealth = int.Parse(data[3]);
-            instance.dodge = int.Parse(data[4]);
+            coins = int.Parse(data[0]);
+            speed = float.Parse(data[1]);
+            damage = int.Parse(data[2]);
+            health = int.Parse(data[3]);
+            maxHealth = int.Parse(data[3]);
+            dodge = int.Parse(data[4]);
+            weaponSpriteId = int.Parse(data[5]);
 
             SceneManager.LoadScene("Spawn", LoadSceneMode.Single);
         }

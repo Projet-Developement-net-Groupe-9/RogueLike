@@ -11,8 +11,8 @@ public class ShopMenu : MonoBehaviour
     {
         if (GameManager.instance.player.coins >= GameManager.instance.GetUpgradePrices()[0])
         {
-            GameManager.instance.player.health++;
-            GameManager.instance.player.coins -= GameManager.instance.GetUpgradePrices()[0];
+            GameManager.instance.DebitCoins(GameManager.instance.GetUpgradePrices()[0]);
+            GameManager.instance.UpgradeHealth();
         }
         else
         {
@@ -24,8 +24,8 @@ public class ShopMenu : MonoBehaviour
     {
         if (GameManager.instance.player.coins >= GameManager.instance.GetUpgradePrices()[1])
         {
-            GameManager.instance.player.damage++;
-            GameManager.instance.player.coins -= GameManager.instance.GetUpgradePrices()[1];
+            GameManager.instance.DebitCoins(GameManager.instance.GetUpgradePrices()[1]);
+            GameManager.instance.UpgradeDamage();
         }
         else
         {
@@ -37,8 +37,8 @@ public class ShopMenu : MonoBehaviour
     {
         if (GameManager.instance.player.coins >= GameManager.instance.GetUpgradePrices()[2])
         {
-            GameManager.instance.player.speed++;
-            GameManager.instance.player.coins -= GameManager.instance.GetUpgradePrices()[2];
+            GameManager.instance.DebitCoins(GameManager.instance.GetUpgradePrices()[2]);
+            GameManager.instance.UpgradeDodge();
         }
         else
         {

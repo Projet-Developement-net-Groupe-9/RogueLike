@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public int maxHealth;
     public int dodge;
     public bool godMode;
+    public int weaponSpriteId;
 
     private void InitObjects()
     {
@@ -47,6 +48,7 @@ public class Player : MonoBehaviour
         damage = gm.damage;
         maxHealth = gm.maxHealth;
         dodge = gm.dodge;
+        weaponSpriteId = gm.weaponSpriteId;
     }
 
     private void InitDefaultVars()
@@ -57,6 +59,7 @@ public class Player : MonoBehaviour
         damage = 1;
         maxHealth = health;
         dodge = 1;
+        weaponSpriteId = 0;
     }
 
     private void InitVars()
