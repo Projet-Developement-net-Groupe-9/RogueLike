@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -63,6 +64,12 @@ public class PlayerMove : MonoBehaviour
                     player.spriteRenderer.flipX = false;
                     playerWeapon.anim = "WeaponHitRight";
                 }
+            }
+
+            if(Input.GetKey(KeyCode.Escape))
+            {
+                if (MainMenu.begin == true)
+                    SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
             }
         }
     }
