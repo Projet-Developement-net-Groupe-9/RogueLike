@@ -2228,7 +2228,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   rigidBody: {fileID: 0}
   animator: {fileID: 0}
-  health: 0
+  health: 10
   coins: 0
   speed: 0
   damage: 0
@@ -2236,6 +2236,7 @@ MonoBehaviour:
   dodge: 0
   godMode: 0
   weaponSpriteId: 0
+  bestScore: 0
 --- !u!82 &345546769
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5603,7 +5604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.37450826, y: 0.00008869171, z: -10}
+  m_LocalPosition: {x: 0.57095075, y: 0.00006249547, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1301455432}
@@ -8924,7 +8925,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.211281, y: 1}
+    m_SensorSize: {x: 1.8183962, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10661,7 +10662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 112}
+  m_AnchoredPosition: {x: 0, y: 165}
   m_SizeDelta: {x: 68.8129, y: 78.169}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1796614472
@@ -10697,7 +10698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3718842862631874603, guid: 8a43da5b166f3c34a828fd4f4bd1493c, type: 3}
+  m_Sprite: {fileID: -7057806690012809336, guid: 8a43da5b166f3c34a828fd4f4bd1493c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

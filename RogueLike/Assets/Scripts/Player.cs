@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
 
     private void InitDefaultVars()
     {
-        health = 5;
+        health = 10;
         coins = 0;
         speed = 1f;
         damage = 1;
@@ -117,7 +117,7 @@ public class Player : MonoBehaviour
         playerMove.PlayerMoveUpdate();
         checkHealth();
         if (godMode)
-            health = 5;
+            health = 10;
     }
 
     private void FixedUpdate()
