@@ -69,6 +69,7 @@ public class PlayerMove : MonoBehaviour
             if(Input.GetKey(KeyCode.Escape))
             {
                 if (MainMenu.begin == true)
+                    Destroy(gm);
                     SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
             }
         }

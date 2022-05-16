@@ -104,7 +104,6 @@ public class GameManager : MonoBehaviour
         instance.maxHealth = player.maxHealth;
         instance.dodge = player.dodge;
         instance.weaponSpriteId = player.weaponSpriteId;
-        instance.bestScore = player.gm.bestScore;
     }
 
     public void SaveState()
