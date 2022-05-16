@@ -74,19 +74,16 @@ public class GameManager : MonoBehaviour
     {
         player.maxHealth++;
         player.health++;
-        UpdateState();
     }
 
     public void UpgradeDamage()
     {
         player.damage++;
-        UpdateState();
     }
 
     public void UpgradeDodge()
     {
         player.dodge++;
-        UpdateState();
     }
 
     public void DebitCoins(int value)
